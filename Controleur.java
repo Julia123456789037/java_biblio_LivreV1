@@ -52,6 +52,5 @@ public class Controleur
 		//this.metier.removeRow(val);
 	}
 
-
 	public static void main(String[] a){ new Controleur(); }
 }
