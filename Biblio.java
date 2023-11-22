@@ -1,6 +1,6 @@
-package projet_java.Bibli;
+package projet_java.Bibli.java_biblio_LivreV1;
 
-import iut.algo.Decomposeur;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -8,7 +8,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.io.OutputStreamWriter;
-import iut.algo.*               ;
+
+
 
 
 public class Biblio
@@ -25,9 +26,10 @@ public class Biblio
 	public void initTabLivres()
 	{
 		Scanner     scFic;
-		Decomposeur dec;
 
-		String      liv;
+		
+
+		String[]      s;
 		boolean     bPremium;
 
 		try
@@ -36,12 +38,10 @@ public class Biblio
 
 			while ( sc.hasNextLine() )
 			{
-
-				liv =  sc.nextLine() ;
-
-				//                                    nom                prenom         premium     anneeAdh
-				this.lstLivre.add ( new Livre ( dec.getString(0), dec.getString(1), dec.getString(2), dec.getString(3), dec.getString(4), dec.getInt(5), dec.getString(6) ) );
-				System.out.println( dec.getString(0) + " " + dec.getString(1) + " " + dec.getString(4) + " " + dec.getString(5) + " " + dec.getString(6) );
+				s = sc.nextLine().split("\t");
+				
+				this.lstLivre.add ( new Livre ( s[0], s[1], s[2], s[3], s[4], Integer.parseInt(s[5]), s[6] ) );
+				System.out.println( s[0] + " " +  s[1] + " " +  s[2] + " " +  s[3] + " " +  s[4] + " " +  Integer.parseInt(s[5]) + " " +  s[6] );
 			}
 
 			sc.close();
