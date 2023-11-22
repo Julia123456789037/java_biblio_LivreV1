@@ -26,25 +26,28 @@ public class Biblio
 	public void initTabLivres()
 	{
 		Scanner     scFic;
+		String[]	s;
+		int			cpt;
+		cpt = 0;
 
-		
-
-		String[]      s;
-		boolean     bPremium;
 
 		try
 		{
-			Scanner sc = new Scanner ( new FileInputStream ( "Livres.data" ), "UTF8" );
+			scFic = new Scanner ( new FileInputStream ( "Livres.data" ), "UTF8" );
 
-			while ( sc.hasNextLine() )
+			while ( scFic.hasNextLine() )
 			{
-				s = sc.nextLine().split("\t");
-				
+				System.out.println(cpt);
+				s = scFic.nextLine().split("\t");
+
 				this.lstLivre.add ( new Livre ( s[0], s[1], s[2], s[3], s[4], Integer.parseInt(s[5]), s[6] ) );
 				System.out.println( s[0] + " " +  s[1] + " " +  s[2] + " " +  s[3] + " " +  s[4] + " " +  Integer.parseInt(s[5]) + " " +  s[6] );
+				cpt++;
 			}
+			System.out.println(scFic.hasNextLine());
+			System.out.println("final : " + cpt);
 
-			sc.close();
+			scFic.close();
 		}
 		catch (Exception e){ e.printStackTrace(); }
 	}
