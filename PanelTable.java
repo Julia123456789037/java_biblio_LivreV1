@@ -22,6 +22,16 @@ public class PanelTable extends JPanel
 		this.tblGrilleDonnees = new JTable ( new GrilleDonneesModel(ctrl) );
 		this.tblGrilleDonnees.setFillsViewportHeight(true);
 
+		this.tblGrilleDonnees.getColumnModel().getColumn(0).setPreferredWidth(250);
+		this.tblGrilleDonnees.getColumnModel().getColumn(1).setPreferredWidth(50);
+		this.tblGrilleDonnees.getColumnModel().getColumn(2).setPreferredWidth(50);
+		this.tblGrilleDonnees.getColumnModel().getColumn(3).setPreferredWidth(50);
+		this.tblGrilleDonnees.getColumnModel().getColumn(4).setPreferredWidth(50);
+		this.tblGrilleDonnees.getColumnModel().getColumn(5).setPreferredWidth(50);
+		this.tblGrilleDonnees.getColumnModel().getColumn(6).setPreferredWidth(250);
+
+
+
  		spGrilleDonnees   = new JScrollPane( this.tblGrilleDonnees );
 
 		// positionnement des composants
